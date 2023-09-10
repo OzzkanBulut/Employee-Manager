@@ -18,8 +18,8 @@ public class EmployeeJpaRepositoryService implements EmployeeDao {
     }
 
     @Override
-    public void addEmployee(Employee employee) {
-        employeeRepository.save(employee);
+    public Employee addEmployee(Employee employee) {
+       return employeeRepository.save(employee);
     }
 
     @Override
@@ -34,11 +34,11 @@ public class EmployeeJpaRepositoryService implements EmployeeDao {
 
     @Override
     public void deleteEmployee(Long employeeId) {
-        employeeRepository.deleteById(employeeId);
+       employeeRepository.deleteById(employeeId);
     }
 
     @Override
-    public void updateEmployee(Employee employee) {
-        employeeRepository.save(employee);
+    public Employee updateEmployee(Employee employee) {
+        return employeeRepository.save(employee);
     }
 }
