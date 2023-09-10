@@ -38,7 +38,8 @@ public class EmployeeJpaRepositoryService implements EmployeeDao {
     }
 
     @Override
-    public Employee updateEmployee(Employee employee) {
+    public Employee updateEmployee(Employee employee,Long employeeId) {
+        employee.setId(employeeId);
         return employeeRepository.save(employee);
     }
 }

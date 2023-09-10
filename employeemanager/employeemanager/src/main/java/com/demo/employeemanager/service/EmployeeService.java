@@ -45,8 +45,9 @@ public class EmployeeService {
          employeeDao.deleteEmployee(employeeId);
     }
 
-    public Employee updateEmployee(Employee employee) {
-        return employeeDao.updateEmployee(employee);
+    public Employee updateEmployee(Employee employee,Long employeeId) {
+
+        return employeeDao.updateEmployee(employee,employeeId);
     }
 
 }

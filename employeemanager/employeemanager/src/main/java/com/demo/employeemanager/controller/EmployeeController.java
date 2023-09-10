@@ -35,9 +35,9 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.addEmployee(employee), HttpStatus.CREATED);
     }
 
-    @PutMapping("/employees")
-    public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) {
-        return new ResponseEntity<>(employeeService.updateEmployee(employee), HttpStatus.OK);
+    @PutMapping("/employees/{employeeId}")
+    public ResponseEntity<Employee> updateEmployee(@PathVariable("employeeId") Long employeeId,@RequestBody Employee employee) {
+        return new ResponseEntity<>(employeeService.updateEmployee(employee,employeeId), HttpStatus.OK);
     }
 
     @DeleteMapping("/employees/{employeeId}")
